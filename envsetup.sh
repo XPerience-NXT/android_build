@@ -169,7 +169,7 @@ function setpaths()
     unset ARM_EABI_TOOLCHAIN ARM_EABI_TOOLCHAIN_PATH
     case $ARCH in
         arm)
-            toolchaindir=arm/arm-linux-androideabi-$targetgccversion/bin
+            toolchaindir=arm/arm-eabi-$targetgccversion/bin
             if [ -d "$gccprebuiltdir/$toolchaindir" ]; then
                  export ARM_EABI_TOOLCHAIN="$gccprebuiltdir/$toolchaindir"
                  ARM_EABI_TOOLCHAIN_PATH=":$gccprebuiltdir/$toolchaindir"
@@ -608,11 +608,11 @@ function lunch()
         return 1
     fi
 
+
     if [ "$(which pngquant)" == "" ]
     then
         echo -e "\033[1;33;41mpngquant is not installed! Builds will be larger!\033[0m"
     fi
-
 
     export TARGET_PRODUCT=$product
     export TARGET_BUILD_VARIANT=$variant
