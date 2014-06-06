@@ -173,11 +173,9 @@ endif
 endif
 endif
 endif
-
 ## begin pthread support
 ###########################################################
 
-###########################################################
 ###########################################################
 ## Explicitly declare assembly-only __ASSEMBLY__ macro for
 ## assembly source
