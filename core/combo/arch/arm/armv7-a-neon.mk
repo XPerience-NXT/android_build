@@ -26,6 +26,8 @@ ifeq ($(strip $(TARGET_CPU_VARIANT)),krait)
 else
 ifeq ($(strip $(TARGET_CPU_VARIANT)),scorpion)
 	arch_variant_cflags := -mcpu=cortex-a8
+	arch_variant_ldflags := -Wl,--fix-cortex-a8
+
 else
 	arch_variant_cflags := -march=armv7-a
 endif
@@ -39,6 +41,3 @@ endif
 arch_variant_cflags += \
     -mfloat-abi=softfp \
     -mfpu=neon
-
-arch_variant_ldflags := \
-	-Wl,--fix-cortex-a8

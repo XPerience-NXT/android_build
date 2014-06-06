@@ -172,6 +172,9 @@ ifeq ($(HOST_OS),linux)
 endif
 endif
 endif
+# Use C and CPP flags so it gets passed to the linker.
+LOCAL_CFLAGS += $(THREAD_FLAGS)
+LOCAL_CPPFLAGS += $(THREAD_FLAGS)
 endif
 ## begin pthread support
 ###########################################################
